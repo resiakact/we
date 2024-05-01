@@ -8,8 +8,8 @@ let Commands = [{
 }];
 function showAds() {
   var ads = [
-    'https://github.com/resiakact/we',
-    'https://github.com/resiakact/we',
+    'https://images.app.goo.gl/DgQHWUPNsmm8DLU28',
+    '',
     '',
     '',
     ''
