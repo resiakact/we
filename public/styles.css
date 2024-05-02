@@ -2,6 +2,11 @@ body {
      padding: 20px;
      background-color: #f8f9fa;
      font-family: 'Poppins', sans-serif;
+     color: #fff;
+     background-image: url('https://giphy.com/clips/storyful-weather-and-science-tripod-south-indian-lake-X9M7IPQvw3kXZ2TK1F');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed; 
 }
  .container {
      background-color: #c5479d;
