@@ -9,6 +9,9 @@ body {
      background-attachment: fixed; 
 }
  .container {
+     background-image: url('https://giphy.com/clips/storyful-weather-and-science-tripod-south-indian-lake-X9M7IPQvw3kXZ2TK1F');
+     background-size: cover;
+     background-repeat: no-repeat;
      background-color: #c5479d;
      border-radius: 10px;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
