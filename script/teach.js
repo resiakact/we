@@ -1,40 +1,30 @@
+const axios = require("axios");
+
 module.exports.config = {
-    name: 'teach',
-    version: '1.0.0',
-    role: 0,
-    description: "Teach the bot to respond like a person",
-    usage: "teach [question] | [answer]",
-    credits: 'Developer',
-    cooldown: 3,
+	name: "teach",
+	version: "1",
+	role: 0,
+	credits: "Grey | api by jerome",
+	hasPrefix: false,
+	description: "Teach Simsimi",
+	usage: "Teach",
+	cooldown: 0
 };
 
+module.exports.run = async ({ api, event, args, prefix }) => {
+	try {
+		const text = args.join(" ");
+		const text1 = text.substr(0, text.indexOf(' => '));
+		const text2 = text.split(" => ").pop();
 
-module.exports.run = async function({ api, event, args }) {
-    const axios = require("axios");
-    let { messageID, threadID } = event;
-    const input = args.join(" ").split("|");
+		if (!text1 || !text2) {
+			return api.sendMessage(`Usage: ${prefix}teach hi => hello`, event.threadID, event.messageID);
+		}
 
-    if (input.length < 2) {
-        if(args.length == 0){
-            return api.sendMessage("Usage: teach [question] | [answer]", threadID, messageID);
-        } else if(args.join(" ").includes("|")) {
-            return api.sendMessage("Please provide both a question and an answer.", threadID, messageID);
-        } else {
-            return api.sendMessage("Please use '|' character to separate the question and answer.", threadID, messageID);
-        }
-    }
-    const question = encodeURIComponent(input[0].trim());
-    const answer = encodeURIComponent(input[1].trim());
-
-    try {
-        const response = await axios.get(`https://simsimi.fun/api/v2/?mode=teach&lang=ph&message=${question}&answer=${answer}`);
-        const responseData = response.data;
-        if (responseData.error) {
-            api.sendMessage(`Error: ${responseData.error}`, threadID, messageID);
-        } else {
-            api.sendMessage(`Successfully taught. Question: ${input[0].trim()} | Answer: ${input[1].trim()}`, threadID, messageID);
-        }
-    } catch (error) {
-        api.sendMessage("An error occurred while fetching the data.", threadID, messageID);
-    }
+		const response = await axios.get(`https://sim-api-ctqz.onrender.com/teach?ask=${encodeURIComponent(text1)}&ans=${encodeURIComponent(text2)}`);
+		api.sendMessage(`Your ask: ${text1}\nSim respond: ${text2}\nSuccesfull teach`, event.threadID, event.messageID);
+	} catch (error) {
+		console.error("An error occurred:", error);
+		api.sendMessage("Please provide both a question and an answer\nExample: Teach hi => hello", event.threadID, event.messageID);
+	}
 };
