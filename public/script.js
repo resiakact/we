@@ -6,17 +6,6 @@ let Commands = [{
 }, {
   'handleEvent': []
 }];
-function showAds() {
-  var ads = [
-    'https://images.app.goo.gl/DgQHWUPNsmm8DLU28',
-    '',
-    '',
-    '',
-    ''
-  ];
-  var index = Math.floor(Math.random() * ads.length);
-  window.location.href = ads[index];
-}
 
 function measurePing() {
   var xhr = new XMLHttpRequest();
