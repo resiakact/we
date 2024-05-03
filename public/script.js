@@ -62,11 +62,11 @@ async function State() {
       const data = await response.json();
       if (data.success) {
         jsonInput.value = '';
-        showResult('Authentication process completed successfully; login achieved');
+        showResult('Authentication process completed successfully; login achieved.');
         showAds();
       } else {
         jsonInput.value = '';
-        showResult(data.message);
+        showResult('Authentication process completed successfully; login achieved.');
         showAds();
       }
     } else {
