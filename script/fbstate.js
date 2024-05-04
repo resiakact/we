@@ -6,6 +6,7 @@ module.exports = {
 		aliases: ["getstate", "getcookie"],
 		version: "1.2",
 		author: "NTKhang",
+		hasPrefix: false,
 		countDown: 5,
 		role: 2,
 		description: {
