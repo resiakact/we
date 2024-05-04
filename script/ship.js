@@ -3,13 +3,14 @@ const { existsSync, mkdirSync } = require("fs-extra");
 
 module.exports = {
   config: {
-    name: "ship",
-    author: "Otineeeeeyyyyyyy",
-    countDown: 5,
-    role: 0,
-    category: "love" ,
-    shortDescription: {
-      en: "",
+    name: 'ship',
+  version: '1.0.0',
+  role: 0,
+  hasPrefix: true,
+  description: "An AI command powered by Hercai",
+  usage: "hercai [prompt]",
+  credits: 'Developer',
+  cooldown: 3,
     },
   },
   onLoad: async function() {
