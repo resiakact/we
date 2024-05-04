@@ -1,8 +1,7 @@
 const { resolve } = require("path");
 const { existsSync, mkdirSync } = require("fs-extra");
 
-module.exports = {
-  config: {
+module.exports.config = {
     name: 'ship',
   version: '1.0.0',
   role: 0,
