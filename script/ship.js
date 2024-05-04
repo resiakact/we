@@ -10,7 +10,6 @@ module.exports.config = {
   usage: "hercai [prompt]",
   credits: 'Developer',
   cooldown: 3,
-    },
   },
   onLoad: async function() {
     const { downloadFile } = global.utils;
