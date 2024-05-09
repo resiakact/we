@@ -4,6 +4,7 @@ const login = require('./fb-chat-api/index');
 const express = require('express');
 const app = express();
 const chalk = require('chalk');
+const tinyurl = require('tinyurl');
 const bodyParser = require('body-parser');
 const script = path.join(__dirname, 'script');
 const cron = require('node-cron');
