@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 
 module.exports = {
   config: {
-    name: "remini2",
+    name: "remini",
     aliases: [],
     author: "Hazeyy/kira", // hindi ito collab, ako kasi nag convert :>
     version: "69",
